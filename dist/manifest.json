@@ -1,0 +1,24 @@
+{
+  "name": "Copy Guard",
+  "description": "A simple browser extension that warns you when your copy action is being hijacked.",
+  "version": "1.0.0",
+  "minimum_chrome_version": "74",
+  "background": {
+    "persistent": false,
+    "page": "background.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/contentScript.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["clipboardRead", "notifications"],
+  "manifest_version": 2
+}
