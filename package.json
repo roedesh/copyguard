@@ -5,6 +5,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack -w --config webpack.dev.js",
+    "start:firefox": "web-ext run --source-dir ./dist/",
     "release:chrome": "cd dist && webstore upload --auto-publish",
     "release:firefox": "cd dist && web-ext-submit",
     "lint": "eslint \"**/*.ts\"",
