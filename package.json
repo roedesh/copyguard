@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "build:package": "yarn build && web-ext build",
+    "build:package": "yarn build && web-ext build --overwrite-dest",
     "dev": "webpack -w --config webpack.dev.js",
     "start:firefox": "web-ext run",
     "release:chrome": "cd dist && webstore upload --auto-publish",
