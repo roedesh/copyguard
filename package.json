@@ -2,10 +2,14 @@
   "name": "copy-guard",
   "version": "1.0.0",
   "description": "A simple browser extension that warns you when your copy action is being hijacked.",
+  "webExt": {
+    "sourceDir": "dist/"
+  },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
+    "build:package": "yarn build && web-ext build",
     "dev": "webpack -w --config webpack.dev.js",
-    "start:firefox": "web-ext run --source-dir ./dist/",
+    "start:firefox": "web-ext run",
     "release:chrome": "cd dist && webstore upload --auto-publish",
     "release:firefox": "cd dist && web-ext-submit",
     "lint": "eslint \"**/*.ts\"",
@@ -30,7 +34,6 @@
     "ts-loader": "^4.0.1",
     "typescript": "^3.8.0",
     "web-ext": "^5.4.0",
-    "web-ext-submit": "^5.4.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-merge": "^4.2.2"
