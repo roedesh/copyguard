@@ -1,16 +1,22 @@
-# Chrome Extension (built with TypeScript + React)
+<p align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="dist/icon48.png" alt="Logo" width="80" height="80">
+  </a>
 
-> This project is a boilerplate project to allow you to quickly build chrome extensions using TypeScript and React.
+  <h3 align="center">Copy Guard</h3>
 
-## Building
+  <p align="center">
+    A simple browser extension that warns you when your copy action was hijacked.
+  </p>
 
-1.  Clone repo
-2.  `npm i`
-3.  `npm run dev` to compile once or `npm run watch` to run the dev task in watch mode
-4.  `npm run build` to build a production (minified) version
+  <p align="center">
+    <img src="copyguard-gif.gif" alt="Awesome README Templates" />
+  </p>
+</p>
 
-## Installation
+## About
 
-1.  Complete the steps to build the project above
-2.  Go to [_chrome://extensions_](chrome://extensions) in Google Chrome
-3.  With the developer mode checkbox ticked, click **Load unpacked extension...** and select the _dist_ folder from this repo
+<br />
+<br />
+
+Whenever the _copy_ event is fired, this browser will compare your text selection with the data that was added to your clipboard. If there is a difference, a native notification will be triggered.
