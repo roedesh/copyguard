@@ -16,7 +16,7 @@
 
 ## About
 
-Whenever the _copy_ event is fired, this browser will compare your text selection with the data that was added to your clipboard. If there is a difference, a native notification will be triggered.
+This extension warns you whenever your copy action was hijacked. When you select text and copy it, this extension will compare your selection with the data that was added to your clipboard. If there is a difference, a native notification will be triggered.
 
 ## Building
 
