@@ -1,7 +1,7 @@
 {
   "name": "Copy Guard",
   "description": "A simple browser extension that warns you when your copy action is being hijacked.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minimum_chrome_version": "74",
   "browser_specific_settings": {
     "gecko": {
