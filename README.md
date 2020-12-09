@@ -33,4 +33,5 @@ Whenever the _copy_ event is fired, this browser will compare your text selectio
 
 ## Testing in Firefox
 
-Run `yarn start:firefox` and a Firefox window will open with the extension installed.
+1.  Complete the steps to build the project above
+2.  Run `yarn start:firefox` and a Firefox window will open with the extension installed.
