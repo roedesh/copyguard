@@ -10,14 +10,14 @@
   <p align="center">
     A simple browser extension that warns you when your copy action was hijacked.
   </p>
-
-  <p align="center">
-    <img src="copyguard-gif.gif" alt="Copy Guard demo" />
-  </p>
   
   <p align="center">
     <a href="https://addons.mozilla.org/en-US/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
     <a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.0.1-blue"></a>
+  </p>
+
+  <p align="center">
+    <img src="copyguard-gif.gif" alt="Copy Guard demo" />
   </p>
 </p>
 
