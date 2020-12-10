@@ -1,7 +1,12 @@
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/roedesh/copyguard">
     <img src="dist/icon48.png" alt="Logo" width="80" height="80">
   </a>
+  
+  <p align="center">
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
+    <a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.0.1-blue"></a>
+  </p>
 
   <h3 align="center">Copy Guard</h3>
 
