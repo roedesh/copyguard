@@ -7,8 +7,8 @@ type ContentScriptMessage = {
 };
 
 export enum Notifications {
-  ALTERED_CLIPBOARD_DATA = "Javascript altered your clipboard data!",
-  OFFSCREEN_ELEMENTS_FOUND = "There were offscreen elements in your text selection!",
+  ALTERED_CLIPBOARD_DATA = "Your clipboard data was altered by Javascript!",
+  OFFSCREEN_ELEMENTS_FOUND = "There are offscreen elements in your text selection!",
 }
 
 const getContentFromClipboard = (): string => {

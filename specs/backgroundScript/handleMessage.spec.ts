@@ -7,7 +7,7 @@ document.execCommand = jest.fn().mockImplementation(() => {
 });
 
 const setupBody = () => {
-  document.body.innerHTML = `<textarea id="sandbox" />`;
+  document.body.innerHTML = `<textarea id="sandbox"></textarea>`;
 };
 
 describe("handleMessage", () => {
@@ -32,7 +32,7 @@ describe("handleMessage", () => {
     expect(mockBrowser.notifications.create.getMockCalls().length).toBe(0);
   });
 
-  it("given offscreen elements, fires a notification", () => {
+  it("given isSelectionGoingOffscreen is true, fires a notification", () => {
     setupBody();
 
     mockBrowser.notifications.create.expect({
