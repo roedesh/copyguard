@@ -13,7 +13,11 @@
   
   <p align="center">
     <a href="https://addons.mozilla.org/en-US/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
-    <a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.0.1-blue"></a>
+    <a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.0.1-blue"></a> *
+  </p>
+  
+  <p align="center">
+    * Currently awaiting Chrome approval
   </p>
 
   <p align="center">
@@ -29,7 +33,7 @@ This extension warns you whenever your copy action was hijacked. When you select
 
 1.  Clone repo
 2.  `npm i`
-3.  `npm run dev` to compile once or `npm run watch` to run the dev task in watch mode
+3.  `npm run dev` to run the dev task in watch mode
 4.  `npm run build` to build a production (minified) version
 
 ## Testing in Chrome
