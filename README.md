@@ -29,6 +29,10 @@
 
 This extension warns you whenever your copy action was hijacked. When you select text and copy it, this extension will compare your selection with the data that was added to your clipboard. If there is a difference, a native notification will be triggered.
 
+## Features
+- [x] Warns you when Javascript alters your clipboard data after copying
+- [ ] Warns you when the selection you copied contains offscreen elements (under development)
+
 ## Building
 
 1.  Clone repo
