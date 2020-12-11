@@ -7,6 +7,10 @@ const setupBody = () => {
 const selectText = (window: Window, element: Node): void => {
   const range = window.document.createRange();
   range.selectNode(element);
+  range.getBoundingClientRect = jest.fn().mockReturnValue({
+    x: 0,
+    y: 0,
+  });
   window.getSelection().addRange(range);
 };
 
@@ -17,7 +21,7 @@ describe("handleCopyEvent", () => {
     const paragraph = window.document.querySelector("p");
     selectText(window, paragraph);
 
-    mockBrowser.runtime.sendMessage.expect({ selection: "Text to select" });
+    mockBrowser.runtime.sendMessage.expect({ selection: "Text to select", isSelectionGoingOffscreen: false });
 
     handleCopyEvent();
   });

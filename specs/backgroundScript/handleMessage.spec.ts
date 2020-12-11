@@ -1,4 +1,4 @@
-import handleMessage from "../../src/backgroundScript/handleMessage";
+import handleMessage, { Notifications } from "../../src/backgroundScript/handleMessage";
 
 document.execCommand = jest.fn().mockImplementation(() => {
   const sandbox = document.getElementById("sandbox") as HTMLTextAreaElement;
@@ -17,18 +17,31 @@ describe("handleMessage", () => {
     mockBrowser.notifications.create.expect({
       type: "basic",
       title: "Copy Guard",
-      message: "Your copy action was hijacked!",
+      message: Notifications.ALTERED_CLIPBOARD_DATA,
       iconUrl: "icon128.png",
     });
 
-    handleMessage({ selection: "Different text" });
+    handleMessage({ selection: "Different text", isSelectionGoingOffscreen: false });
   });
 
   it("given the text selection is equal to clipboard data, does not fire a notification", () => {
     setupBody();
 
-    handleMessage({ selection: "Some text" });
+    handleMessage({ selection: "Some text", isSelectionGoingOffscreen: false });
 
     expect(mockBrowser.notifications.create.getMockCalls().length).toBe(0);
+  });
+
+  it("given offscreen elements, fires a notification", () => {
+    setupBody();
+
+    mockBrowser.notifications.create.expect({
+      type: "basic",
+      title: "Copy Guard",
+      message: Notifications.OFFSCREEN_ELEMENTS_FOUND,
+      iconUrl: "icon128.png",
+    });
+
+    handleMessage({ selection: "Some text", isSelectionGoingOffscreen: true });
   });
 });
