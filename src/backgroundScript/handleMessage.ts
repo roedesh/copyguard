@@ -1,14 +1,13 @@
-import { browser } from "webextension-polyfill-ts";
 import { createNotification } from "./utils";
 
 type ContentScriptMessage = {
   selection: string;
-  isSelectionGoingOffscreen: boolean;
+  hasHiddenElementsInSelection: boolean;
 };
 
 export enum Notifications {
   ALTERED_CLIPBOARD_DATA = "Your clipboard data was altered by Javascript!",
-  OFFSCREEN_ELEMENTS_FOUND = "There are offscreen elements in your text selection!",
+  HIDDEN_ELEMENTS_FOUND = "There are hidden elements in your text selection!",
 }
 
 const getContentFromClipboard = (): string => {
@@ -25,14 +24,16 @@ const getContentFromClipboard = (): string => {
   return "";
 };
 
-export default ({ selection, isSelectionGoingOffscreen }: ContentScriptMessage): void => {
-  if (isSelectionGoingOffscreen) {
-    createNotification(Notifications.OFFSCREEN_ELEMENTS_FOUND);
+const minifyString = (str: string) => str.replace(/\s+/g, "");
+
+export default ({ selection, hasHiddenElementsInSelection }: ContentScriptMessage): void => {
+  if (hasHiddenElementsInSelection) {
+    createNotification(Notifications.HIDDEN_ELEMENTS_FOUND);
     return;
   }
 
   const clipboardContent = getContentFromClipboard();
-  const isDifferentFromSelection = clipboardContent !== selection;
+  const isDifferentFromSelection = minifyString(clipboardContent) !== minifyString(selection);
 
   if (isDifferentFromSelection) createNotification(Notifications.ALTERED_CLIPBOARD_DATA);
 };
