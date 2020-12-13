@@ -1,5 +1,10 @@
 import { browser } from "webextension-polyfill-ts";
 
+const forbiddenStyles = {
+  "font-size": "0px",
+  visibility: "hidden",
+};
+
 const getElementsInSelection = (selection: Selection): Element[] => {
   const range = selection.getRangeAt(0);
   const parentNode = range.commonAncestorContainer.parentNode as HTMLElement;
@@ -11,10 +16,12 @@ const getElementsInSelection = (selection: Selection): Element[] => {
 
 const isHiddenByStyles = (element: HTMLElement): boolean => {
   const computedStyle = window.getComputedStyle(element);
-  const hasFontSizeZero = computedStyle.getPropertyValue("font-size") === "0px";
-  const isHidden = computedStyle.getPropertyValue("visibility") === "hidden";
 
-  return hasFontSizeZero || isHidden;
+  const forbiddenStyleFound = !!Object.keys(forbiddenStyles).find(
+    (property) => computedStyle.getPropertyValue(property) === forbiddenStyles[property],
+  );
+
+  return forbiddenStyleFound;
 };
 
 const isHiddenElement = (element: HTMLElement): boolean => {

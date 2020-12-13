@@ -21,13 +21,13 @@ describe("handleMessage", () => {
       iconUrl: "icon128.png",
     });
 
-    handleMessage({ selection: "Different text", isSelectionGoingOffscreen: false });
+    handleMessage({ selection: "Different text", hasHiddenElementsInSelection: false });
   });
 
   it("given the text selection is equal to clipboard data, does not fire a notification", () => {
     setupBody();
 
-    handleMessage({ selection: "Some text", isSelectionGoingOffscreen: false });
+    handleMessage({ selection: "Some text", hasHiddenElementsInSelection: false });
 
     expect(mockBrowser.notifications.create.getMockCalls().length).toBe(0);
   });
@@ -38,10 +38,10 @@ describe("handleMessage", () => {
     mockBrowser.notifications.create.expect({
       type: "basic",
       title: "Copy Guard",
-      message: Notifications.OFFSCREEN_ELEMENTS_FOUND,
+      message: Notifications.HIDDEN_ELEMENTS_FOUND,
       iconUrl: "icon128.png",
     });
 
-    handleMessage({ selection: "Some text", isSelectionGoingOffscreen: true });
+    handleMessage({ selection: "Some text", hasHiddenElementsInSelection: true });
   });
 });
