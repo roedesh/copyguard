@@ -11,7 +11,7 @@ const setupBody = () => {
 };
 
 describe("handleMessage", () => {
-  it("given the text selection is different from clipboard data, fires a notification", () => {
+  it("given the text selection is different from clipboard data, triggers a warning for altered clipboard data", () => {
     setupBody();
 
     mockBrowser.notifications.create.expect({
@@ -24,15 +24,7 @@ describe("handleMessage", () => {
     handleMessage({ selection: "Different text", hasHiddenElementsInSelection: false });
   });
 
-  it("given the text selection is equal to clipboard data, does not fire a notification", () => {
-    setupBody();
-
-    handleMessage({ selection: "Some text", hasHiddenElementsInSelection: false });
-
-    expect(mockBrowser.notifications.create.getMockCalls().length).toBe(0);
-  });
-
-  it("given isSelectionGoingOffscreen is true, fires a notification", () => {
+  it("given hasHiddenElementsInSelection is true, triggers a warning for hidden text content", () => {
     setupBody();
 
     mockBrowser.notifications.create.expect({
@@ -43,5 +35,13 @@ describe("handleMessage", () => {
     });
 
     handleMessage({ selection: "Some text", hasHiddenElementsInSelection: true });
+  });
+
+  it("given the text selection is equal to clipboard data, does not trigger a warning", () => {
+    setupBody();
+
+    handleMessage({ selection: "Some text", hasHiddenElementsInSelection: false });
+
+    expect(mockBrowser.notifications.create.getMockCalls().length).toBe(0);
   });
 });
