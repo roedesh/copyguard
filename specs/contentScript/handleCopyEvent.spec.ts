@@ -1,7 +1,12 @@
 import handleCopyEvent from "../../src/contentScript/handleCopyEvent";
 
-const setupBody = (extraHTML = "") => {
-  document.body.innerHTML = `<div><p>Text to select${extraHTML}</p></div>`;
+const setupBody = () => {
+  document.body.innerHTML = `<div><p>Text to select</p></div>`;
+  const paragraph = document.querySelector("p");
+  paragraph.getBoundingClientRect = jest.fn().mockReturnValue({
+    width: 100,
+    height: 25,
+  })
 };
 
 const selectElement = (querySelector: string): void => {
@@ -18,18 +23,6 @@ describe("handleCopyEvent", () => {
     selectElement("p");
 
     mockBrowser.runtime.sendMessage.expect({ selection: "Text to select", hasHiddenElementsInSelection: false });
-
-    handleCopyEvent();
-  });
-
-  it("given a text selection with hidden contents, calls sendMessage with hasHiddenElementsInSelection set to true", async () => {
-    setupBody(`<span style="font-size: 0px;">hidden text</span>`);
-    selectElement("p");
-
-    mockBrowser.runtime.sendMessage.expect({
-      selection: "Text to selecthidden text",
-      hasHiddenElementsInSelection: true,
-    });
 
     handleCopyEvent();
   });
