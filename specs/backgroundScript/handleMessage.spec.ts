@@ -1,4 +1,4 @@
-import handleMessage from "../../src/backgroundScript/handleMessage";
+import handleMessage, { Notifications } from "../../src/backgroundScript/handleMessage";
 
 document.execCommand = jest.fn().mockImplementation(() => {
   const sandbox = document.getElementById("sandbox") as HTMLTextAreaElement;
@@ -7,27 +7,40 @@ document.execCommand = jest.fn().mockImplementation(() => {
 });
 
 const setupBody = () => {
-  document.body.innerHTML = `<textarea id="sandbox" />`;
+  document.body.innerHTML = `<textarea id="sandbox"></textarea>`;
 };
 
 describe("handleMessage", () => {
-  it("given the text selection is different from clipboard data, fires a notification", () => {
+  it("given the text selection is different from clipboard data, triggers a warning for altered clipboard data", () => {
     setupBody();
 
     mockBrowser.notifications.create.expect({
       type: "basic",
       title: "Copy Guard",
-      message: "Your copy action was hijacked!",
+      message: Notifications.ALTERED_CLIPBOARD_DATA,
       iconUrl: "icon128.png",
     });
 
-    handleMessage({ selection: "Different text" });
+    handleMessage({ selection: "Differenttext", hasHiddenElementsInSelection: false });
   });
 
-  it("given the text selection is equal to clipboard data, does not fire a notification", () => {
+  it("given hasHiddenElementsInSelection is true, triggers a warning for hidden text content", () => {
     setupBody();
 
-    handleMessage({ selection: "Some text" });
+    mockBrowser.notifications.create.expect({
+      type: "basic",
+      title: "Copy Guard",
+      message: Notifications.HIDDEN_ELEMENTS_FOUND,
+      iconUrl: "icon128.png",
+    });
+
+    handleMessage({ selection: "Sometext", hasHiddenElementsInSelection: true });
+  });
+
+  it("given the text selection is equal to clipboard data, does not trigger a warning", () => {
+    setupBody();
+
+    handleMessage({ selection: "Sometext", hasHiddenElementsInSelection: false });
 
     expect(mockBrowser.notifications.create.getMockCalls().length).toBe(0);
   });
