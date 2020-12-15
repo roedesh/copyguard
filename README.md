@@ -2,7 +2,6 @@
   <a href="https://github.com/roedesh/copyguard">
     <img src="dist/icon48.png" alt="Logo" width="80" height="80">
   </a>
-  
 
 
   <h3 align="center">Copy Guard</h3>
@@ -12,12 +11,9 @@
   </p>
   
   <p align="center">
+    <a href="https://chrome.google.com/webstore/detail/copy-guard/kobgknfkonpcnijbmjpepfonpnkeefij"><img alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/v/kobgknfkonpcnijbmjpepfonpnkeefij"></a>
     <a href="https://addons.mozilla.org/en-US/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
-    <a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.0.1-blue"></a> *
-  </p>
-  
-  <p align="center">
-    * Currently awaiting Chrome approval
+    <a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.0.1-blue"></a>
   </p>
 
   <p align="center">
@@ -30,6 +26,7 @@
 This extension warns you whenever your copy action was hijacked. When you select text and copy it, this extension will compare your selection with the data that was added to your clipboard. If there is a difference, a native notification will be triggered.
 
 ## Features
+
 - [x] Warns you when Javascript alters your clipboard data after copying
 - [ ] Warns you when the selection you copied contains offscreen elements (under development)
 
