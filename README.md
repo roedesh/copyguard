@@ -28,14 +28,15 @@ This extension warns you whenever your copy action was hijacked. When you select
 ## Features
 
 - [x] Warns you when Javascript alters your clipboard data after copying
-- [ ] Warns you when the selection you copied contains offscreen elements (under development)
+- [x] Warns you when the selection you copied contains hidden elements
+- [ ] Whitelist or blacklist websites (coming soon)
 
 ## Building
 
 1.  Clone repo
-2.  `npm i`
-3.  `npm run dev` to run the dev task in watch mode
-4.  `npm run build` to build a production (minified) version
+2.  `yarn`
+3.  `yarn dev` to run the dev task in watch mode
+4.  `yarn build` to build a production (minified) version
 
 ## Testing in Chrome
 
