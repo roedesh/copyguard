@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { browser } from "webextension-polyfill-ts";
 
 export const createNotification = (message: string): void => {
@@ -9,3 +8,5 @@ export const createNotification = (message: string): void => {
     iconUrl: "icon128.png",
   });
 };
+
+export const minifyString = (str: string) => str.replace(/\s+/g, "");

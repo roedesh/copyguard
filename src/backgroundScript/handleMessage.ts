@@ -1,4 +1,4 @@
-import { createNotification } from "./utils";
+import { createNotification, minifyString } from "../utils";
 
 type ContentScriptMessage = {
   selection: string;
@@ -24,16 +24,16 @@ const getContentFromClipboard = (): string => {
   return "";
 };
 
-const minifyString = (str: string) => str.replace(/\s+/g, "");
-
 export default ({ selection, hasHiddenElementsInSelection }: ContentScriptMessage): void => {
-  if (hasHiddenElementsInSelection) {
-    createNotification(Notifications.HIDDEN_ELEMENTS_FOUND);
-    return;
+  if (selection) {
+    if (hasHiddenElementsInSelection) {
+      createNotification(Notifications.HIDDEN_ELEMENTS_FOUND);
+      return;
+    }
+
+    const clipboardContent = getContentFromClipboard();
+    const isDifferentFromSelection = minifyString(clipboardContent) !== minifyString(selection);
+
+    if (isDifferentFromSelection) createNotification(Notifications.ALTERED_CLIPBOARD_DATA);
   }
-
-  const clipboardContent = getContentFromClipboard();
-  const isDifferentFromSelection = minifyString(clipboardContent) !== minifyString(selection);
-
-  if (isDifferentFromSelection) createNotification(Notifications.ALTERED_CLIPBOARD_DATA);
 };

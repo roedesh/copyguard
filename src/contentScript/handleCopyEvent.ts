@@ -1,4 +1,5 @@
 import { browser } from "webextension-polyfill-ts";
+import { minifyString } from "../utils";
 
 const getElementsInSelection = (selection: Selection): Element[] => {
   const range = selection.getRangeAt(0);
@@ -23,13 +24,15 @@ const isHiddenElement = (element: HTMLElement): boolean => {
 
 export default () => {
   const selection = window.getSelection();
-  const selectionString = selection.toString();
-  const elementsInSelection = getElementsInSelection(selection);
-  const hasHiddenElementsInSelection = !!elementsInSelection.find(isHiddenElement);
+  const selectionString = minifyString(selection.toString());
 
-  if (selectionString)
+  if (selectionString) {
+    const elementsInSelection = getElementsInSelection(selection);
+    const hasHiddenElementsInSelection = !!elementsInSelection.find(isHiddenElement);
+
     browser.runtime.sendMessage({
       selection: selectionString,
       hasHiddenElementsInSelection,
     });
+  }
 };

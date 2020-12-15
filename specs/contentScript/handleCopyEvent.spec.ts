@@ -22,7 +22,7 @@ describe("handleCopyEvent", () => {
     setupBody();
     selectElement("p");
 
-    mockBrowser.runtime.sendMessage.expect({ selection: "Text to select", hasHiddenElementsInSelection: false });
+    mockBrowser.runtime.sendMessage.expect({ selection: "Texttoselect", hasHiddenElementsInSelection: false });
 
     handleCopyEvent();
   });

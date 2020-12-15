@@ -21,7 +21,7 @@ describe("handleMessage", () => {
       iconUrl: "icon128.png",
     });
 
-    handleMessage({ selection: "Different text", hasHiddenElementsInSelection: false });
+    handleMessage({ selection: "Differenttext", hasHiddenElementsInSelection: false });
   });
 
   it("given hasHiddenElementsInSelection is true, triggers a warning for hidden text content", () => {
@@ -34,13 +34,13 @@ describe("handleMessage", () => {
       iconUrl: "icon128.png",
     });
 
-    handleMessage({ selection: "Some text", hasHiddenElementsInSelection: true });
+    handleMessage({ selection: "Sometext", hasHiddenElementsInSelection: true });
   });
 
   it("given the text selection is equal to clipboard data, does not trigger a warning", () => {
     setupBody();
 
-    handleMessage({ selection: "Some text", hasHiddenElementsInSelection: false });
+    handleMessage({ selection: "Sometext", hasHiddenElementsInSelection: false });
 
     expect(mockBrowser.notifications.create.getMockCalls().length).toBe(0);
   });
