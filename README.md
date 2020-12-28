@@ -25,6 +25,13 @@
 
 This extension warns you whenever your copy action was hijacked. When you select text and copy it, this extension will compare your selection with the data that was added to your clipboard. If there is a difference, a native notification will be triggered.
 
+Available for the following browsers:
+
+<a href="https://chrome.google.com/webstore/detail/copy-guard/kobgknfkonpcnijbmjpepfonpnkeefij"><img alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/v/kobgknfkonpcnijbmjpepfonpnkeefij"></a>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
+<a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.1.0-blue"></a>
+
+
 ## Features
 
 - [x] Warns you when Javascript alters your clipboard data after copying
