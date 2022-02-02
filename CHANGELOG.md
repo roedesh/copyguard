@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added check for offscreen and hidden elements
 
-## [1.0.1] - 2014-12-09
+## [1.0.1] - 2020-12-09
 
 ### Added
 
