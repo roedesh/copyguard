@@ -23,6 +23,8 @@
 
 ## About
 
+**[Read the blog post for more in-depth info](https://ruud.je/blog/always-double-check-what-you-copy-from-websites/)**
+
 This extension warns you whenever your copy action was hijacked. When you select text and copy it, this extension will compare your selection with the data that was added to your clipboard. If there is a difference, a native notification will be triggered.
 
 Available for the following browsers:
