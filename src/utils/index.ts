@@ -1,4 +1,4 @@
-import { browser } from "webextension-polyfill-ts";
+import browser from "webextension-polyfill";
 
 export const createNotification = (message: string): void => {
   browser.notifications.create({

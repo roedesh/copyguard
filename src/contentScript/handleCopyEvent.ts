@@ -1,4 +1,4 @@
-import { browser } from "webextension-polyfill-ts";
+import browser from "webextension-polyfill";
 import { minifyString } from "../utils";
 
 const getElementsInSelection = (selection: Selection): Element[] => {

@@ -7,14 +7,13 @@ describe("minifyString", () => {
   });
 
   it("removes tabs from a string", () => {
-    const minifiedString = minifyString("This   is  a   string  with    tabs");
+    const minifiedString = minifyString("This\tis\ta\tstring\twith\ttabs");
     expect(minifiedString).toBe("Thisisastringwithtabs");
   });
 
   it("removes newline characters from a string", () => {
-    const minifiedString = minifyString(`This is a
-    multi-line string`);
-    
+    const minifiedString = minifyString("This is a\n multi-line string");
+
     expect(minifiedString).toBe("Thisisamulti-linestring");
   });
 });

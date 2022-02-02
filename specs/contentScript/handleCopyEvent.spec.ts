@@ -1,3 +1,4 @@
+import browser from "webextension-polyfill";
 import handleCopyEvent from "../../src/contentScript/handleCopyEvent";
 
 const setupBody = () => {
@@ -6,7 +7,7 @@ const setupBody = () => {
   paragraph.getBoundingClientRect = jest.fn().mockReturnValue({
     width: 100,
     height: 25,
-  })
+  });
 };
 
 const selectElement = (querySelector: string): void => {
@@ -22,15 +23,19 @@ describe("handleCopyEvent", () => {
     setupBody();
     selectElement("p");
 
-    mockBrowser.runtime.sendMessage.expect({ selection: "Texttoselect", hasHiddenElementsInSelection: false });
-
     handleCopyEvent();
+
+    expect(browser.runtime.sendMessage).toHaveBeenCalledWith({
+      selection: "Texttoselect",
+      hasHiddenElementsInSelection: false,
+    });
   });
 
   it("given no text selection, does not call sendMessage", async () => {
     setupBody();
+
     handleCopyEvent();
 
-    expect(mockBrowser.runtime.sendMessage.getMockCalls().length).toBe(0);
+    expect(browser.runtime.sendMessage).not.toHaveBeenCalled();
   });
 });

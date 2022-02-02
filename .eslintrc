@@ -26,13 +26,5 @@
     "no-shadow": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-shadow": ["error"]
-  },
-  "overrides": [
-    {
-      "files": ["**/*.spec.ts"],
-      "globals": {
-        "mockBrowser": "readonly"
-      }
-    }
-  ]
+  }
 }
