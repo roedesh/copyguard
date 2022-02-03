@@ -10,7 +10,10 @@
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module",
-    "project": "./tsconfig.*?.json"
+    "project": "./tsconfig.*?.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "plugins": ["@typescript-eslint"],
   "settings": {
@@ -20,11 +23,9 @@
       }
     }
   },
-  "rules": {
-    "import/extensions": 0,
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["specs/setup.ts", "**/*.spec.ts"] }],
-    "no-shadow": "off",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-shadow": ["error"]
-  }
+  // "rules": {
+  //   "import/extensions": 0,
+  //   "import/no-extraneous-dependencies": ["error", { "devDependencies": ["specs/setup.ts", "**/*.spec.ts"] }],
+  //   "@typescript-eslint/no-shadow": ["error"]
+  // }
 }
