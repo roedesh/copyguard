@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/roedesh/copyguard">
-    <img src="dist/icon48.png" alt="Logo" width="80" height="80">
+    <img src="dist/icon128.png" alt="Logo" width="80" height="80">
   </a>
 
 
