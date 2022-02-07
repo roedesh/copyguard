@@ -11,7 +11,7 @@ const Settings: FC = () => {
         <h1>About</h1>
 
         <p>
-          <strong>Version: {version}</strong>
+          <strong>CopyGuard v{version}</strong>
         </p>
 
         <p>

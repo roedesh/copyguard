@@ -12,7 +12,11 @@ const setupBody = () => {
 };
 
 describe("handleMessage", () => {
-  it("given the text selection is different from clipboard data, triggers a warning for altered clipboard data", () => {
+  beforeEach(() => {
+    (browser.notifications.create as jest.Mock).mockClear();
+  });
+
+  it("triggers a warning for altered clipboard data", () => {
     setupBody();
 
     handleMessage({ selection: "Differenttext", hasHiddenElementsInSelection: false });
@@ -25,7 +29,7 @@ describe("handleMessage", () => {
     });
   });
 
-  it("given hasHiddenElementsInSelection is true, triggers a warning for hidden text content", () => {
+  it("triggers a warning for hidden text content", () => {
     setupBody();
 
     handleMessage({ selection: "Sometext", hasHiddenElementsInSelection: true });
@@ -38,7 +42,7 @@ describe("handleMessage", () => {
     });
   });
 
-  it("given the text selection is equal to clipboard data, does not trigger a warning", () => {
+  it("given nothing is wrong, does not trigger a warning", () => {
     setupBody();
 
     handleMessage({ selection: "Sometext", hasHiddenElementsInSelection: false });

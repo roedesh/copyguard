@@ -1,16 +1,40 @@
 import { FC, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import browser from "webextension-polyfill";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
+const schema = yup
+  .object()
+  .shape({
+    whitelist: yup
+      .string()
+      .test(
+        "contains-valid-domains",
+        'One or more lines were incorrect. Make sure to leave out the "http://" or "https://" part.',
+        (value) => {
+          const lines = value.split("\n");
+          return !lines.find((line) => !line.match(/^([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)$/g));
+        },
+      ),
+  })
+  .required();
+
 const Settings: FC = () => {
-  const { control, handleSubmit, setValue } = useForm({
+  const {
+    control,
+    formState: { errors },
+    handleSubmit,
+    setValue,
+  } = useForm({
     defaultValues: {
       whitelist: "",
     },
+    resolver: yupResolver(schema),
   });
 
   const onSubmit = (settings) => {
@@ -33,10 +57,18 @@ const Settings: FC = () => {
             <Controller
               name="whitelist"
               control={control}
-              render={({ field }) => <Form.Control {...field} as="textarea" rows={6} />}
+              render={({ field }) => (
+                <Form.Control
+                  {...field}
+                  as="textarea"
+                  rows={6}
+                  isInvalid={!!errors.whitelist}
+                  placeholder="www.example.com"
+                />
+              )}
             />
-
             <Form.Text className="text-muted">Enter one domain per line (e.g. www.example.com).</Form.Text>
+            <Form.Control.Feedback type="invalid">{errors.whitelist?.message}</Form.Control.Feedback>
           </Form.Group>
 
           <Button variant="primary" type="submit">

@@ -12,7 +12,7 @@ describe("minifyString", () => {
   });
 
   it("removes newline characters from a string", () => {
-    const minifiedString = minifyString("This is a\n multi-line string");
+    const minifiedString = minifyString("This is a\n multi-line \nstring");
 
     expect(minifiedString).toBe("Thisisamulti-linestring");
   });

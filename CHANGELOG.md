@@ -9,18 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- This CHANGELOG file
-- Package "jest-webextension-mock"
+- Settings page
+  - Whitelisting
+  - About section
 
 ### Changed
 
 - Better Typescript support
   - Replaced `webextension-polyfill-ts` with `@types/webextension-polyfil`
   - Updated unit tests to support this migration
-
-### Removed
-
-- Packages `mockzilla` and `mockzilla-webextension`
+  - Removed Mockzilla
 
 ## [1.1.0] - 2020-12-15
 

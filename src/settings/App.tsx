@@ -1,8 +1,6 @@
 import { FC } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Col from "react-bootstrap/Col";
+import { Routes, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Header from "./components/Header";
 import Settings from "./pages/Settings";
 import About from "./pages/About";

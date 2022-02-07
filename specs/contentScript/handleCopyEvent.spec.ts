@@ -19,6 +19,10 @@ const selectElement = (querySelector: string): void => {
 };
 
 describe("handleCopyEvent", () => {
+  beforeEach(() => {
+    (browser.runtime.sendMessage as jest.Mock).mockClear();
+  });
+
   it("given a text selection, calls sendMessage", async () => {
     setupBody();
     selectElement("p");
