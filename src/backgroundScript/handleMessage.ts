@@ -5,9 +5,6 @@ type ContentScriptMessage = {
   hasHiddenElementsInSelection: boolean;
 };
 
-const ALTERED_CLIPBOARD_DATA = "Your clipboard data was altered by Javascript!";
-const HIDDEN_ELEMENTS_FOUND = "There are hidden elements in your text selection!";
-
 const getContentFromClipboard = (): string => {
   const sandbox = document.getElementById("sandbox") as HTMLTextAreaElement;
   sandbox.value = "";
@@ -25,13 +22,13 @@ const getContentFromClipboard = (): string => {
 export default ({ selection, hasHiddenElementsInSelection }: ContentScriptMessage): void => {
   if (selection) {
     if (hasHiddenElementsInSelection) {
-      createNotification(HIDDEN_ELEMENTS_FOUND);
+      createNotification("There are hidden elements in your text selection!");
       return;
     }
 
     const clipboardContent = getContentFromClipboard();
     const isDifferentFromSelection = minifyString(clipboardContent) !== minifyString(selection);
 
-    if (isDifferentFromSelection) createNotification(ALTERED_CLIPBOARD_DATA);
+    if (isDifferentFromSelection) createNotification("Your clipboard data was altered by Javascript!");
   }
 };

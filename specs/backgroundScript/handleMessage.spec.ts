@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill";
-import handleMessage, { Notifications } from "../../src/backgroundScript/handleMessage";
+import handleMessage from "../../src/backgroundScript/handleMessage";
 
 document.execCommand = jest.fn().mockImplementation(() => {
   const sandbox = document.getElementById("sandbox") as HTMLTextAreaElement;
@@ -24,7 +24,7 @@ describe("handleMessage", () => {
     expect(browser.notifications.create).toHaveBeenCalledWith({
       type: "basic",
       title: "Copy Guard",
-      message: Notifications.ALTERED_CLIPBOARD_DATA,
+      message: "Your clipboard data was altered by Javascript!",
       iconUrl: "icon128.png",
     });
   });
@@ -37,7 +37,7 @@ describe("handleMessage", () => {
     expect(browser.notifications.create).toHaveBeenCalledWith({
       type: "basic",
       title: "Copy Guard",
-      message: Notifications.HIDDEN_ELEMENTS_FOUND,
+      message: "There are hidden elements in your text selection!",
       iconUrl: "icon128.png",
     });
   });
