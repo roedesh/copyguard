@@ -8,6 +8,8 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
+const HOSTNAME_REGEX = /^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?)*\.?$/g;
+
 const schema = yup
   .object()
   .shape({
@@ -18,7 +20,7 @@ const schema = yup
         'One or more lines were incorrect. Make sure to leave out the "http://" or "https://" part.',
         (value) => {
           const lines = value.split("\n");
-          return !lines.find((line) => !line.match(/^([a-zA-Z0-9]+(\.[a-zA-Z0-9]+)+.*)$/g));
+          return !lines.find((line) => !line.match(HOSTNAME_REGEX));
         },
       ),
   })
