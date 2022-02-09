@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-02-09
+
 ### Added
 
 - Settings page
@@ -34,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Checks the users text selection against the contents of their clipboard
   - Shows a notification if there is a difference
 
-[unreleased]: https://github.com/roedesh/copyguard/compare/v1.1.0...HEAD
+[unreleased]: https://github.com/roedesh/copyguard/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/roedesh/copyguard/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/roedesh/copyguard/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/roedesh/copyguard/releases/tag/v1.0.1
