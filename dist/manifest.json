@@ -6,7 +6,7 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "copyguard@ruud.je",
-      "strict_min_version": "54.0"
+      "strict_min_version": "57.0"
     }
   },
   "background": {
