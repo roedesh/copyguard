@@ -76,7 +76,7 @@ const Settings: FC = () => {
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Submit
+            Save
           </Button>
         </Form>
       </Col>
