@@ -1,5 +1,6 @@
 import { FC, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
+import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import browser from "webextension-polyfill";
@@ -41,6 +42,7 @@ const Settings: FC = () => {
 
   const onSubmit = (settings) => {
     browser.storage.sync.set(settings);
+    toast("Settings saved!", { type: "success" });
   };
 
   useEffect(() => {
