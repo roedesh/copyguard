@@ -38,7 +38,7 @@ Available for the following browsers:
 
 - [x] Warns you when Javascript alters your clipboard data after copying
 - [x] Warns you when the selection you copied contains hidden elements
-- [ ] Whitelist or blacklist websites (coming soon)
+- [x] Whitelist websites
 
 ## Building
 
