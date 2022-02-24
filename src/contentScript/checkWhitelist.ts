@@ -3,11 +3,13 @@ import handleCopyEvent from "./handleCopyEvent";
 import { removePrefixWWW } from "../utils";
 
 export default async () => {
-  const result = await browser.storage.sync.get("whitelist");
-  const domain = removePrefixWWW(window.location.hostname);
-  const resultLines: string[] = (result.whitelist as string).split("\n");
+  const whitelist = (await browser.storage.sync.get("whitelist")).whitelist as string;
+  if (whitelist) {
+    const domain = removePrefixWWW(window.location.hostname);
+    const resultLines: string[] = whitelist.split("\n");
 
-  if (resultLines.find((domainFromList) => removePrefixWWW(domainFromList.trim()) === domain)) {
-    document.removeEventListener("copy", handleCopyEvent);
+    if (resultLines.find((domainFromList) => removePrefixWWW(domainFromList.trim()) === domain)) {
+      document.removeEventListener("copy", handleCopyEvent);
+    }
   }
 };
