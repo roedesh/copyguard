@@ -1,0 +1,26 @@
+name: automerge
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Run unit Test
+        run: yarn test
+  automerge:
+    needs: test
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
