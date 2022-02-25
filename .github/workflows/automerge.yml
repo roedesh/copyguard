@@ -2,7 +2,7 @@ name: automerge
 on: [push, pull_request]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -10,8 +10,10 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
+      - name: Run unit Test
+        run: yarn test
   automerge:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
 
     permissions:
