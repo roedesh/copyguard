@@ -23,5 +23,5 @@ jobs:
         env:
           PUPPETEER_EXECUTABLE_PATH: /opt/hostedtoolcache/chromium/latest/x64/chrome
         with:
-          artifact: "copy_guard-{version}.zip"
+          artifact: "web-ext-artifacts/copy_guard-{version}.zip"
           keys: ${{ secrets.SUBMIT_KEYS }}
