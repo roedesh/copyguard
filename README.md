@@ -12,7 +12,7 @@
   
   <p align="center">
     <a href="https://chrome.google.com/webstore/detail/copy-guard/kobgknfkonpcnijbmjpepfonpnkeefij"><img alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/v/kobgknfkonpcnijbmjpepfonpnkeefij"></a>
-    <a href="https://addons.mozilla.org/en-US/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
+    <a href="https://addons.mozilla.org/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
     <a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.2.1-blue"></a>
   </p>
 
@@ -30,13 +30,13 @@ This extension warns you whenever your copy action was hijacked. When you select
 Available for the following browsers:
 
 <a href="https://chrome.google.com/webstore/detail/copy-guard/kobgknfkonpcnijbmjpepfonpnkeefij"><img alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/v/kobgknfkonpcnijbmjpepfonpnkeefij"></a>
-<a href="https://addons.mozilla.org/en-US/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
+<a href="https://addons.mozilla.org/firefox/addon/copy-guard/"><img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/copy-guard"></a>
 <a href="https://microsoftedge.microsoft.com/addons/detail/copy-guard/nkdddmepblpmknbobcpebakjehldaebj"><img alt="Edge Add-on" src="https://img.shields.io/badge/edge%20add--on-v1.2.1-blue"></a>
 
 
 ## Features
 
-- [x] Warns you when Javascript alters your clipboard data after copying
+- [x] Warns you when JavaScript alters your clipboard data after copying
 - [x] Warns you when the selection you copied contains hidden elements
 - [x] Whitelist websites
 
