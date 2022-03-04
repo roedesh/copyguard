@@ -19,7 +19,7 @@ describe("handleMessage", () => {
   it("triggers a warning for altered clipboard data", () => {
     setupBody();
 
-    handleMessage({ selection: "Differenttext", hasHiddenElementsInSelection: false });
+    handleMessage({ domain: "example.com", selection: "Differenttext", hasHiddenElementsInSelection: false });
 
     expect(browser.notifications.create).toHaveBeenCalledWith({
       type: "basic",
@@ -32,7 +32,7 @@ describe("handleMessage", () => {
   it("triggers a warning for hidden text content", () => {
     setupBody();
 
-    handleMessage({ selection: "Sometext", hasHiddenElementsInSelection: true });
+    handleMessage({ domain: "example.com", selection: "Sometext", hasHiddenElementsInSelection: true });
 
     expect(browser.notifications.create).toHaveBeenCalledWith({
       type: "basic",
@@ -45,7 +45,7 @@ describe("handleMessage", () => {
   it("given nothing is wrong, does not trigger a warning", () => {
     setupBody();
 
-    handleMessage({ selection: "Sometext", hasHiddenElementsInSelection: false });
+    handleMessage({ domain: "example.com", selection: "Sometext", hasHiddenElementsInSelection: false });
 
     expect(browser.notifications.create).not.toHaveBeenCalled();
   });
