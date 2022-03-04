@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import Container from "react-bootstrap/Container";
 import Header from "./components/Header";
 import Settings from "./pages/Settings";
+import Insights from "./pages/Insights";
 import About from "./pages/About";
 
 const App: FC = () => {
@@ -13,6 +14,7 @@ const App: FC = () => {
       <Container>
         <Routes>
           <Route path="/" element={<Settings />} />
+          <Route path="insights" element={<Insights />} />
           <Route path="about" element={<About />} />
         </Routes>
       </Container>

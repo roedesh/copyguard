@@ -18,6 +18,9 @@ const Header: FC = () => {
               <LinkContainer to="/">
                 <Nav.Link>Settings</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/insights">
+                <Nav.Link>Insights</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="/about">
                 <Nav.Link>About</Nav.Link>
               </LinkContainer>
