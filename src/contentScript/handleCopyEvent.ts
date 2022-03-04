@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill";
-import { minifyString } from "../utils";
+import { minifyString, removePrefixWWW } from "../utils";
 
 const getElementsInSelection = (selection: Selection): Element[] => {
   const range = selection.getRangeAt(0);
@@ -31,6 +31,7 @@ export default () => {
     const hasHiddenElementsInSelection = !!elementsInSelection.find(isHiddenElement);
 
     browser.runtime.sendMessage({
+      domain: removePrefixWWW(window.location.hostname),
       selection: selectionString,
       hasHiddenElementsInSelection,
     });

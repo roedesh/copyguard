@@ -1,6 +1,8 @@
 import { createNotification, minifyString } from "../utils";
+import { logWarning } from "./logger";
 
 type ContentScriptMessage = {
+  domain: string;
   selection: string;
   hasHiddenElementsInSelection: boolean;
 };
@@ -19,16 +21,20 @@ const getContentFromClipboard = (): string => {
   return "";
 };
 
-export default ({ selection, hasHiddenElementsInSelection }: ContentScriptMessage): void => {
+export default ({ domain, selection, hasHiddenElementsInSelection }: ContentScriptMessage): void => {
   if (selection) {
     if (hasHiddenElementsInSelection) {
       createNotification("There are hidden elements in your text selection!");
+      logWarning("www.example.com", "hiddenElements", selection);
       return;
     }
 
     const clipboardContent = getContentFromClipboard();
     const isDifferentFromSelection = minifyString(clipboardContent) !== minifyString(selection);
 
-    if (isDifferentFromSelection) createNotification("Your clipboard data was altered by Javascript!");
+    if (isDifferentFromSelection) {
+      createNotification("Your clipboard data was altered by Javascript!");
+      logWarning(domain, "alteredClipboard", selection, clipboardContent);
+    }
   }
 };
