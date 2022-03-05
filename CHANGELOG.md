@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Insights page
+  - Overview of domains that alter clipboard data, and how often
+  - Detail page for each domain, which includes the "before and after" of the clipboard data for each warning that was triggered.
+  - Includes a button to save the data to a JSON file
+
+### Changed
+
+- Hidden elements without any text inside do no longer trigger a warning, as they pose no danger. This fixes some false positives.
+
 ## [1.2.1] - 2022-02-25
 
 ### Changed
