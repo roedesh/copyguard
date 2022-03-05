@@ -32,7 +32,7 @@ describe("handleCopyEvent", () => {
 
     expect(browser.runtime.sendMessage).toHaveBeenCalledWith({
       domain: "example.com",
-      selection: "Texttoselect",
+      selection: "Text to select",
       hasHiddenElementsInSelection: false,
     });
   });

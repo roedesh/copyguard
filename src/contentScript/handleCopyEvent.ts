@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill";
-import { minifyString, removePrefixWWW } from "../utils";
+import { removePrefixWWW } from "../utils";
 
 const getElementsInSelection = (selection: Selection): Element[] => {
   const range = selection.getRangeAt(0);
@@ -24,7 +24,7 @@ const isHiddenElement = (element: HTMLElement): boolean => {
 
 export default () => {
   const selection = window.getSelection();
-  const selectionString = minifyString(selection.toString());
+  const selectionString = selection.toString();
 
   if (selectionString) {
     const elementsInSelection = getElementsInSelection(selection);
