@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill";
-import { removePrefixWWW } from "../utils";
+import { removePrefixWWW } from "../utils/strings";
 
 const getElementsInSelection = (selection: Selection): HTMLElement[] => {
   const range = selection.getRangeAt(0);

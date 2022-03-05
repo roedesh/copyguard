@@ -1,7 +1,7 @@
 import { useForm, Controller } from "react-hook-form";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { saveToFile } from "../../utils";
+import { saveToFile } from "../../utils/fs";
 
 const stripClipboardData = (logState) => {
   const data = { ...logState };

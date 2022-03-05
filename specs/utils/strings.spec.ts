@@ -1,4 +1,4 @@
-import { minifyString } from "../../src/utils";
+import { minifyString, removePrefixWWW } from "../../src/utils/strings";
 
 describe("minifyString", () => {
   it("removes whitespace from a string", () => {
@@ -15,5 +15,12 @@ describe("minifyString", () => {
     const minifiedString = minifyString("This is a\n multi-line \nstring");
 
     expect(minifiedString).toBe("Thisisamulti-linestring");
+  });
+});
+
+describe("removePrefixWWW", () => {
+  it("removes 'www.' from the string", () => {
+    const domainWithoutWWW = removePrefixWWW("www.example.com");
+    expect(domainWithoutWWW).toBe("example.com");
   });
 });

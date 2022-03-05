@@ -1,4 +1,5 @@
-import { createNotification, minifyString } from "../utils";
+import { createNotification } from "../utils/browser";
+import { minifyString } from "../utils/strings";
 import { logWarning } from "./logger";
 
 type ContentScriptMessage = {
