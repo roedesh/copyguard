@@ -3,8 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import browser from "webextension-polyfill";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
+import SaveForm from "../components/SaveForm";
 import { saveToFile } from "../../utils";
 
 type Warning = {
@@ -22,6 +24,11 @@ const Insights: FC = () => {
   const { id } = useParams();
 
   const onSave = () => {
+    const dataToSave = 
+    saveToFile(JSON.stringify(logState), "copyguard-log.json", "application/json");
+  };
+
+  const onSubmit = (settings) => {
     saveToFile(JSON.stringify(logState), "copyguard-log.json", "application/json");
   };
 
@@ -75,9 +82,7 @@ const Insights: FC = () => {
           <>
             <p>See which websites have altered your clipboard data.</p>
 
-            <p>
-              <Button onClick={onSave}>Save to file</Button>
-            </p>
+            <SaveForm logState={logState} />
 
             <Table striped bordered hover>
               <thead>
