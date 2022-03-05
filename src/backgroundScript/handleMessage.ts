@@ -25,7 +25,7 @@ export default ({ domain, selection, hasHiddenElementsInSelection }: ContentScri
   if (selection) {
     if (hasHiddenElementsInSelection) {
       createNotification("There are hidden elements in your text selection!");
-      logWarning("www.example.com", "hiddenElements", selection);
+      logWarning(domain, "hiddenElements", selection);
       return;
     }
 
