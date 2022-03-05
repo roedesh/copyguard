@@ -12,6 +12,7 @@ const getElementsInSelection = (selection: Selection): HTMLElement[] => {
 
 const isHiddenElement = (element: HTMLElement): boolean => {
   const rect = element.getBoundingClientRect();
+
   return (
     rect.width === 0 ||
     rect.height === 0 ||
@@ -28,7 +29,7 @@ export default () => {
 
   if (selectionString) {
     const elementsInSelection = getElementsInSelection(selection);
-    const elementsWithText = elementsInSelection.filter((element: HTMLElement) => element.innerText)
+    const elementsWithText = elementsInSelection.filter((element: HTMLElement) => element.innerText);
     const hasHiddenElementsInSelection = !!elementsWithText.find(isHiddenElement);
 
     browser.runtime.sendMessage({
