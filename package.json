@@ -54,7 +54,7 @@
     "jest": "^26.6.3",
     "jest-location-mock": "^1.0.9",
     "jest-webextension-mock": "^3.7.19",
-    "prettier": "^2.2.1",
+    "prettier": "^2.6.0",
     "style-loader": "^3.3.1",
     "ts-jest": "^26.4.4",
     "ts-loader": "^9.2.8",
