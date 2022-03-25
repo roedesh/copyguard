@@ -11,7 +11,7 @@ const stripClipboardData = (logState) => {
   return data;
 };
 
-const SaveForm = ({ logState }) => {
+const SaveForm = ({ warningMap }) => {
   const { control, handleSubmit } = useForm({
     defaultValues: {
       includeClipboard: "",
@@ -19,13 +19,13 @@ const SaveForm = ({ logState }) => {
   });
 
   const onSubmit = (saveSettings) => {
-    const dataToSave = saveSettings.includeClipboard ? logState : stripClipboardData(logState);
+    const dataToSave = saveSettings.includeClipboard ? warningMap : stripClipboardData(warningMap);
     saveToFile(JSON.stringify(dataToSave), "copyguard-log.json", "application/json");
   };
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <p>
+      <div className="save-form">
         <Button type="submit">Save to file</Button>
 
         <Controller
@@ -42,7 +42,7 @@ const SaveForm = ({ logState }) => {
             />
           )}
         />
-      </p>
+      </div>
     </Form>
   );
 };

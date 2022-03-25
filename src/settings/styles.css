@@ -1,11 +1,15 @@
 .header {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .separator {
-    margin: 0 8px;
+    margin: 0 0.5rem;
 }
 
 .push-right {
-    margin-left: 15px;
+    margin-left: 1rem;
+}
+
+.save-form {
+    margin-bottom: 1rem;
 }
