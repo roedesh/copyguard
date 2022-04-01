@@ -24,13 +24,15 @@ describe("handleCopyEvent", () => {
   });
 
   it("given a text selection, calls sendMessage", async () => {
+    window.location.assign(new URL("https://example.com"));
     setupBody();
     selectElement("p");
 
     handleCopyEvent();
 
     expect(browser.runtime.sendMessage).toHaveBeenCalledWith({
-      selection: "Texttoselect",
+      domain: "example.com",
+      selection: "Text to select",
       hasHiddenElementsInSelection: false,
     });
   });

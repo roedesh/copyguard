@@ -1,6 +1,6 @@
 import browser from "webextension-polyfill";
 import handleCopyEvent from "./handleCopyEvent";
-import { removePrefixWWW } from "../utils";
+import { removePrefixWWW } from "../utils/strings";
 
 export default async () => {
   const whitelist = (await browser.storage.sync.get("whitelist")).whitelist as string;

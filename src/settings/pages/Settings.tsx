@@ -8,8 +8,10 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import { useStorage } from "../providers/StorageProvider";
 
-const HOSTNAME_REGEX = /^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?)*\.?$/g;
+const HOSTNAME_REGEX =
+  /^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?)*\.?$/g;
 
 const schema = yup
   .object()
@@ -28,6 +30,7 @@ const schema = yup
   .required();
 
 const Settings: FC = () => {
+  const { settings, setSettings } = useStorage();
   const {
     control,
     formState: { errors },
@@ -41,15 +44,13 @@ const Settings: FC = () => {
   });
 
   const onSubmit = (settings) => {
-    browser.storage.sync.set(settings);
+    setSettings(settings);
     toast("Settings saved!", { type: "success" });
   };
 
   useEffect(() => {
-    browser.storage.sync.get("whitelist").then((result) => {
-      setValue("whitelist", result.whitelist);
-    });
-  }, []);
+    if (settings.whitelist) setValue("whitelist", settings.whitelist);
+  }, [settings.whitelist]);
 
   return (
     <Row>

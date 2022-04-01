@@ -2,13 +2,14 @@ import browser from "webextension-polyfill";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { ToastContainer } from "react-toastify";
 import Settings from "../../../src/settings/pages/Settings";
+import StorageProvider from "../../../src/settings/providers/StorageProvider";
 
 const renderSettings = () =>
   render(
-    <>
+    <StorageProvider>
       <ToastContainer />
       <Settings />
-    </>,
+    </StorageProvider>,
   );
 const getWhitelistInput = () => screen.getByLabelText("Whitelist") as HTMLTextAreaElement;
 const getSubmitButton = () => screen.getByText("Save");

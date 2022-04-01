@@ -9,14 +9,19 @@ const Header: FC = () => {
     <header className="header">
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">
-            <img src="icon128.png" width="48" />
-          </Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand>
+              <img src="icon128.png" width="48" />
+            </Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <LinkContainer to="/">
                 <Nav.Link>Settings</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/insights">
+                <Nav.Link>Insights</Nav.Link>
               </LinkContainer>
               <LinkContainer to="/about">
                 <Nav.Link>About</Nav.Link>
