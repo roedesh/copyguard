@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill";
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { act, render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Insights from "../../../src/settings/pages/Insights";
 import StorageProvider from "../../../src/settings/providers/StorageProvider";
@@ -13,8 +13,8 @@ const renderInsights = () =>
     </MemoryRouter>,
   );
 
-const setListOfWarnings = async () => {
-  browser.storage.sync.set({
+const setListOfWarnings = async (): Promise<void> => {
+  return browser.storage.sync.set({
     warnings: {
       "example.com": [
         {
@@ -32,8 +32,8 @@ const setListOfWarnings = async () => {
   });
 };
 
-const setEmptyList = async () => {
-  browser.storage.sync.set({
+const setEmptyList = async (): Promise<void> => {
+  return browser.storage.sync.set({
     warnings: {},
   });
 };
@@ -45,23 +45,25 @@ describe("Insights", () => {
 
   describe("given a list of warnings", () => {
     it("shows a table with domains and amount of warnings", async () => {
-      await setListOfWarnings();
-      await waitFor(() => {
+      await act(async () => {
+        await setListOfWarnings();
         renderInsights();
-        const exampleComTr = screen.getByTestId("host-example.com");
-        within(exampleComTr).getByText("example.com");
-        within(exampleComTr).getByText("2");
       });
+
+      const exampleComTr = screen.getByTestId("host-example.com");
+      within(exampleComTr).getByText("example.com");
+      within(exampleComTr).getByText("2");
     });
   });
 
   describe("given an empty list", () => {
     it("a message is shown", async () => {
-      await setEmptyList();
-      await waitFor(() => {
+      await act(async () => {
+        await setEmptyList();
         renderInsights();
-        screen.getByText("No warnings have been logged yet.");
       });
+
+      screen.getByText("No warnings have been logged yet.");
     });
   });
 });

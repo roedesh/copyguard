@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill";
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import ReactRouterDom, { MemoryRouter } from "react-router-dom";
 import InsightsDetail from "../../../src/settings/pages/InsightsDetail";
 import StorageProvider from "../../../src/settings/providers/StorageProvider";
@@ -42,17 +42,17 @@ const renderInsightsDetail = () =>
 describe("InsightsDetail", () => {
   describe("given a valid id", () => {
     it("shows a table with the warnings for that id", async () => {
-      await setListOfWarnings();
-      await waitFor(() => {
+      await act(async () => {
+        await setListOfWarnings();
         renderInsightsDetail();
-
-        screen.queryByText("alteredClipboard");
-        screen.queryByText("Example selection 1");
-        screen.queryByText("Example clipboard 1");
-
-        screen.queryByText("hiddenElements");
-        screen.queryByText("Example selection 2");
       });
+
+      screen.queryByText("alteredClipboard");
+      screen.queryByText("Example selection 1");
+      screen.queryByText("Example clipboard 1");
+
+      screen.queryByText("hiddenElements");
+      screen.queryByText("Example selection 2");
     });
   });
 });

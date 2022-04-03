@@ -14,7 +14,7 @@ const renderSettings = () =>
 const getWhitelistInput = () => screen.getByLabelText("Whitelist") as HTMLTextAreaElement;
 const getSubmitButton = () => screen.getByText("Save");
 
-const submitForm = (whitelistValue) => {
+const submitForm = (whitelistValue: string) => {
   const whitelist = getWhitelistInput();
   const submitButton = getSubmitButton();
   fireEvent.input(whitelist, { target: { value: whitelistValue } });
