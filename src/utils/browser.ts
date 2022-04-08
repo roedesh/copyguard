@@ -8,3 +8,5 @@ export const createNotification = (message: string): void => {
     iconUrl: "icon128.png",
   });
 };
+
+export const isLinux = () => window.navigator.userAgent.indexOf("Linux") > -1;
