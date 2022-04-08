@@ -1,4 +1,4 @@
-import { FC, createContext, useContext, useEffect, useState } from "react";
+import { FC, PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
 import browser from "webextension-polyfill";
 
 type Warning = {
@@ -29,7 +29,7 @@ const StorageContext = createContext<StorageContext>({
   setSettings: () => {},
 });
 
-const StorageProvider: FC = ({ children }) => {
+const StorageProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
   const [warningMap, setWarningMap] = useState<DomainWarningMapping>({});
   const [settings, setSettingsState] = useState<Settings>({ whitelist: "" });
 
