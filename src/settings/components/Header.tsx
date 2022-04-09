@@ -1,31 +1,29 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { LinkContainer } from "react-router-bootstrap";
 
 const Header: FC = () => {
   return (
     <header className="header">
       <Navbar bg="light" expand="lg">
         <Container>
-          <LinkContainer to="/">
-            <Navbar.Brand>
-              <img src="icon128.png" width="48" />
-            </Navbar.Brand>
-          </LinkContainer>
+          <Navbar.Brand as={Link} to="/">
+            <img src="icon128.png" width="48" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <LinkContainer to="/">
-                <Nav.Link>Settings</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/insights">
-                <Nav.Link>Insights</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/about">
-                <Nav.Link>About</Nav.Link>
-              </LinkContainer>
+              <Nav.Link as={Link} to="/">
+                Settings
+              </Nav.Link>
+              <Nav.Link as={Link} to="/insights">
+                Insights
+              </Nav.Link>
+              <Nav.Link as={Link} to="/about">
+                About
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
