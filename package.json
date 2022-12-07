@@ -25,7 +25,7 @@
     "@hookform/resolvers": "^2.9.10",
     "bootstrap": "5.2.3",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.6.0",
+    "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.40.0",
     "react-router-bootstrap": "^0.26.2",
