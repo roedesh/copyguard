@@ -839,11 +839,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/history@^4.7.11":
-  version "4.7.11"
-  resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.11.tgz#56588b17ae8f50c53983a524fc3cc47437969d64"
-  integrity sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==
-
 "@types/http-cache-semantics@*":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.0.1.tgz#0ea7b61496902b95890dc4c3a116b60cb8dae812"
@@ -930,29 +925,11 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-router-bootstrap@^0.24.5":
-  version "0.24.5"
-  resolved "https://registry.yarnpkg.com/@types/react-router-bootstrap/-/react-router-bootstrap-0.24.5.tgz#9257ba3dfb01cda201aac9fa05cde3eb09ea5b27"
-  integrity sha512-GRx/8xF/skw4/Pmm6d+xbExi8gobCLOe8Eoz9kXPQGbYo7p5Wbi61tjpOF5AbfJ5XMN+fIzweToTi56odj/LOQ==
+"@types/react-router-bootstrap@^0.26.0":
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/@types/react-router-bootstrap/-/react-router-bootstrap-0.26.0.tgz#bf9436be4e8d7152de089cfe23904729b2ebad11"
+  integrity sha512-x6sVsURU9GDlM9nosIyVLx//3uya4KAp99UoAz/K4De/UVo26s2mqG0GE/3iwPu8YJjDob1Dr3PgXTY5cKfLRA==
   dependencies:
-    "@types/react" "*"
-    "@types/react-router-dom" "*"
-
-"@types/react-router-dom@*":
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-5.3.3.tgz#e9d6b4a66fcdbd651a5f106c2656a30088cc1e83"
-  integrity sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==
-  dependencies:
-    "@types/history" "^4.7.11"
-    "@types/react" "*"
-    "@types/react-router" "*"
-
-"@types/react-router@*":
-  version "5.1.18"
-  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-5.1.18.tgz#c8851884b60bc23733500d86c1266e1cfbbd9ef3"
-  integrity sha512-YYknwy0D0iOwKQgz9v8nOzt2J6l4gouBmDnWqUUznltOTaon+r8US8ky8HvN0tXvc38U9m6z/t2RsVsnd1zM0g==
-  dependencies:
-    "@types/history" "^4.7.11"
     "@types/react" "*"
 
 "@types/react-transition-group@^4.4.4":
