@@ -38,7 +38,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^27.5.0",
-    "@types/react": "^18.2.9",
+    "@types/react": "^18.2.12",
     "@types/react-dom": "^18.2.5",
     "@types/react-router-bootstrap": "^0.26.0",
     "@types/webextension-polyfill": "^0.10.0",
