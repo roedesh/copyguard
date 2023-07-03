@@ -51,7 +51,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.2",
     "jest": "^26.6.3",
-    "jest-location-mock": "^1.0.9",
+    "jest-location-mock": "^1.0.10",
     "jest-webextension-mock": "^3.8.9",
     "prettier": "^2.8.8",
     "style-loader": "^3.3.3",
