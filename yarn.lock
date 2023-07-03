@@ -4625,10 +4625,10 @@ jest-leak-detector@^26.6.2:
     jest-get-type "^26.3.0"
     pretty-format "^26.6.2"
 
-jest-location-mock@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/jest-location-mock/-/jest-location-mock-1.0.9.tgz#f4466362423b273e12ca3716467a3d478ce78fa8"
-  integrity sha512-DN/v7Zsa3N4uGgWTCrMrPPxhZORr/4N5gi+u7Tk6sLdORYplrC0//wfFN5FOtx4ZdQzDVfY6rLa4d+wfTKzQHw==
+jest-location-mock@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/jest-location-mock/-/jest-location-mock-1.0.10.tgz#c6744e5a4bd88524c0a02ee989bc141fa7e2cdc7"
+  integrity sha512-g5u0rDOaj1I/lWuPOOP6xfpY+O958IcOanwPKnHdfWm0l4Y2sdVmwXMPY9fT5s8D9nX44Zl/Ypmk6B88mDoqZQ==
   dependencies:
     "@jedmao/location" "^3.0.0"
     jest-diff "^27.0.1"
