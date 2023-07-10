@@ -994,10 +994,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-router-bootstrap@^0.26.0":
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/@types/react-router-bootstrap/-/react-router-bootstrap-0.26.0.tgz#bf9436be4e8d7152de089cfe23904729b2ebad11"
-  integrity sha512-x6sVsURU9GDlM9nosIyVLx//3uya4KAp99UoAz/K4De/UVo26s2mqG0GE/3iwPu8YJjDob1Dr3PgXTY5cKfLRA==
+"@types/react-router-bootstrap@^0.26.1":
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/@types/react-router-bootstrap/-/react-router-bootstrap-0.26.1.tgz#73e8a34ed6da4940346cd5ed41b9acd7739238aa"
+  integrity sha512-EdgZn/PmSA8+I0RW6WyDUgBvkVXc8AmbbgOJ8WJfec1R/V06X++OrIOzwzdgYl4g3uXvEB6oEIxzcjx1/8Opqw==
   dependencies:
     "@types/react" "*"
 
