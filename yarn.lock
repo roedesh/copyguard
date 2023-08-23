@@ -1038,10 +1038,10 @@
   resolved "https://registry.yarnpkg.com/@types/warning/-/warning-3.0.0.tgz#0d2501268ad8f9962b740d387c4654f5f8e23e52"
   integrity sha1-DSUBJorY+ZYrdA04fEZU9fjiPlI=
 
-"@types/webextension-polyfill@^0.10.1":
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/@types/webextension-polyfill/-/webextension-polyfill-0.10.1.tgz#63698f0ef78a069d2d307be3caaee5e70c12e09d"
-  integrity sha512-Sdg+E2F5JUbhkE1qX15QUxpyhfMFKRGJqND9nb1C0gNN4NR7kCV31/1GvNbg6Xe+m/JElJ9/lG5kepMzjGPuQw==
+"@types/webextension-polyfill@^0.10.2":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@types/webextension-polyfill/-/webextension-polyfill-0.10.2.tgz#14175d96d76339fce4d2b9b7837846148296cb5a"
+  integrity sha512-L+T72DVTi/1azY6gw7PRmL49kvobLKQQWfOmHDBRSCkAvaCV4wk222J3ZODYA9Gf/UqUvtItu8FPJgWX5ktO9g==
 
 "@types/yargs-parser@*":
   version "20.2.1"
