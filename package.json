@@ -39,7 +39,7 @@
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^27.5.0",
     "@types/react": "^18.2.28",
-    "@types/react-dom": "^18.2.13",
+    "@types/react-dom": "^18.2.14",
     "@types/react-router-bootstrap": "^0.26.3",
     "@types/webextension-polyfill": "^0.10.4",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
