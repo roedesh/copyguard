@@ -2,7 +2,6 @@
   "permissions": ["notifications", "storage"],
   "background": {
     "{{chrome}}.service_worker": "src/background/index.ts",
-    "{{safari}}.service_worker": "src/background/index.ts",
     "{{firefox}}.scripts": ["src/background/index.ts"],
     "persistent": false
   },
