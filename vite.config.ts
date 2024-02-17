@@ -5,11 +5,17 @@ import webExtension, { readJsonFile } from "vite-plugin-web-extension";
 function generateManifest() {
   const manifest = readJsonFile("src/manifest.json");
   const pkg = readJsonFile("package.json");
+
+  // Until https://bugzil.la/1766026 has been fixed, we need to keep using
+  // manifest_version 2 for Firefox.
+  const manifestVersion = process.env.TARGET === "firefox" ? 2 : 3;
+
   return {
-    name: pkg.name,
+    ...manifest,
+    name: "Copy Guard",
     description: pkg.description,
     version: pkg.version,
-    ...manifest,
+    manifest_version: manifestVersion,
   };
 }
 
@@ -21,6 +27,9 @@ export default defineConfig({
       browser: process.env.TARGET || "chrome",
       manifest: generateManifest,
       watchFilePaths: ["package.json", "manifest.json"],
+      webExtConfig: {
+        startUrl: process.env.START_URL || "https://example.com",
+      },
     }),
   ],
 });
