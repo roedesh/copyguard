@@ -1,17 +1,19 @@
 {
-  "manifest_version": 3,
-  "minimum_chrome_version": "88",
   "permissions": ["notifications", "storage"],
   "background": {
     "{{chrome}}.service_worker": "src/background/index.ts",
-    "{{firefox}}.scripts": ["src/background/index.ts"]
+    "{{safari}}.service_worker": "src/background/index.ts",
+    "{{firefox}}.scripts": ["src/background/index.ts"],
+    "persistent": false
   },
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["src/content/index.ts"]
+      "run_at": "document_start",
+      "js": ["src/contentScript/index.ts"]
     }
   ],
+  "{{chrome}}.minimum_chrome_version": "88",
   "{{firefox}}.browser_specific_settings": {
     "gecko": {
       "id": "copyguard@ruud.je",
