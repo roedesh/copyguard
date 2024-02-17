@@ -1,0 +1,9 @@
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+
+# Node
+node_modules/
+
+# Build
+dist/

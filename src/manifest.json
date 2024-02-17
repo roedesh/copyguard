@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "minimum_chrome_version": "88",
+  "permissions": ["notifications", "storage"],
+  "background": {
+    "{{chrome}}.service_worker": "src/background/index.ts",
+    "{{firefox}}.scripts": ["src/background/index.ts"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/content/index.ts"]
+    }
+  ],
+  "{{firefox}}.browser_specific_settings": {
+    "gecko": {
+      "id": "copyguard@ruud.je",
+      "strict_min_version": "109.0"
+    }
+  },
+  "icons": {
+    "16": "icon/16.png",
+    "32": "icon/32.png",
+    "48": "icon/48.png",
+    "96": "icon/96.png",
+    "128": "icon/128.png"
+  }
+}
