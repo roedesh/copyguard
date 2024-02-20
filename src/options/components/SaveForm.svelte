@@ -35,7 +35,7 @@
   });
 </script>
 
-<form use:form>
+<form class="save-form" use:form>
   <Button class="save-to-file-btn" color="primary">Save to file</Button>
   <Input
     name="includeClipboard"
