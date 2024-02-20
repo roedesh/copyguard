@@ -21,6 +21,9 @@ function generateManifest() {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    __VERSION__: JSON.stringify(readJsonFile("package.json").version),
+  },
   plugins: [
     svelte(),
     webExtension({

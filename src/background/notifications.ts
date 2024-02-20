@@ -5,6 +5,7 @@ export const createNotification = (message: string): void => {
     type: "basic",
     title: "Copy Guard",
     message,
-    iconUrl: "/icon/128.png",
+    priority: 2,
+    iconUrl: "/assets/icon128.png",
   });
 };

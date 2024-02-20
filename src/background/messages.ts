@@ -8,7 +8,7 @@ export const handleMessage = ({
   selection,
   hasHiddenElementsInSelection,
 }: ContentScriptMessage): void => {
-    console.log(clipboardData, hasHiddenElementsInSelection);
+  console.log(clipboardData, hasHiddenElementsInSelection);
   if (hasHiddenElementsInSelection) {
     createNotification("There are hidden elements in your text selection!");
     logWarningToStorage(domain, "hiddenElements", selection);

@@ -1,0 +1,14 @@
+@import "./_settings.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.header {
+  margin-bottom: 1.25rem;
+}
+
+a.active {
+  text-decoration: underline;
+}
+
+.save-to-file-btn {
+  margin-right: 1rem;
+}

@@ -6,7 +6,7 @@ const getElementsInSelection = (selection: Selection): HTMLElement[] => {
   const parentNode = range.commonAncestorContainer.parentNode as HTMLElement;
   const children = Array.from(parentNode.getElementsByTagName("*"));
   const elementsInSelection = children.filter((element) =>
-    selection.containsNode(element)
+    selection.containsNode(element),
   );
 
   return elementsInSelection as HTMLElement[];
@@ -48,7 +48,7 @@ export const handleCopyEvent = (event: ClipboardEvent) => {
   if (selection) {
     const elementsInSelection = getElementsInSelection(selection);
     const elementsWithText = elementsInSelection.filter(
-      (element: HTMLElement) => element.innerText
+      (element: HTMLElement) => element.innerText,
     );
     const hasHiddenElementsInSelection =
       !!elementsWithText.find(isHiddenElement);

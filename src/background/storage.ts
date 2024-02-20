@@ -6,7 +6,7 @@ export const logWarningToStorage = (
   host: string,
   type: WarningType,
   selection: string,
-  clipboard?: string
+  clipboard?: string,
 ) => {
   browser.storage.sync.get("warnings").then((result) => {
     const warnings = result?.warnings ?? {};

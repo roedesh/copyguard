@@ -3,7 +3,7 @@ import { removePrefixWWW } from "../internal/strings";
 
 export const checkWhitelist = async (
   hostname: string,
-  eventHandler: (event: ClipboardEvent) => void
+  eventHandler: (event: ClipboardEvent) => void,
 ) => {
   const whitelist = (await browser.storage.sync.get("whitelist"))
     .whitelist as string;
@@ -14,7 +14,7 @@ export const checkWhitelist = async (
 
     if (
       resultLines.find(
-        (domainFromList) => removePrefixWWW(domainFromList.trim()) === domain
+        (domainFromList) => removePrefixWWW(domainFromList.trim()) === domain,
       )
     ) {
       console.info("🛡️ This domain is whitelisted by Copy Guard!");
