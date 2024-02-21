@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changes
 
+- Moved to Bun
+- Replaced React with Svelte
 - Simplified the check for clipboard changes
   - Instead of comparing text, we now simply check if `clipboardData` is not empty. This only happens when the clipboard was altered by Javascript. In all other cases it is hidden by the browser as a security measure.
 
