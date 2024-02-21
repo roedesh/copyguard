@@ -44,7 +44,7 @@ Available for the following browsers:
 ## Building
 
 1.  Clone repo
-2.  `bun run install`
+2.  `bun install`
 3.  `bun run dev` to run the dev task in watch mode
 4.  `bun run build` to build a production (minified) version
 
