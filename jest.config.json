@@ -1,6 +1,14 @@
 {
   "transform": {
-    ".+\\.(ts|tsx)$": "ts-jest"
+    ".+\\.(ts|tsx)$": [
+      "ts-jest",
+      {
+        "useESM": true,
+        "tsconfig": {
+          "verbatimModuleSyntax": false
+        }
+      }
+    ]
   },
   "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx)$",
   "moduleFileExtensions": ["ts", "js", "tsx"],
