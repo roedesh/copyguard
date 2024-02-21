@@ -1,4 +1,5 @@
 import { removePrefixWWW } from "../internal/strings";
+
 import { sendMessage } from "./messages";
 
 const getElementsInSelection = (selection: Selection): HTMLElement[] => {

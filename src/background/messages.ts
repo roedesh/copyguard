@@ -1,4 +1,5 @@
 import type { ContentScriptMessage } from "../internal/types";
+
 import { createNotification } from "./notifications";
 import { logWarningToStorage } from "./storage";
 

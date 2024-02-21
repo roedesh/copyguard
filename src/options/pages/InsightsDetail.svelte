@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Col, Container, Row } from "@sveltestrap/sveltestrap";
-  import WarningsTable from "../components/WarningsTable.svelte";
   import { link } from "svelte-spa-router";
+  import WarningsTable from "../components/WarningsTable.svelte";
 
   type InsightsDetailParams = {
     host: string;

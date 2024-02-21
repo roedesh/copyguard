@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { validator } from "@felte/validator-yup";
   import {
     Button,
     FormGroup,
@@ -6,11 +7,9 @@
     Input,
     Label,
   } from "@sveltestrap/sveltestrap";
-
-  import { storage, updateStorage } from "../../stores/storage";
   import { createForm } from "felte";
-  import { validator } from "@felte/validator-yup";
   import * as yup from "yup";
+  import { storage, updateStorage } from "../../stores/storage";
 
   const HOSTNAME_REGEX =
     /^(((?!-))(xn--|_)?[a-z0-9-]{0,61}[a-z0-9]{1,1}\.)*(xn--)?([a-z0-9][a-z0-9\-]{0,60}|[a-z0-9-]{1,30}\.[a-z]{2,})$/;

@@ -3,7 +3,6 @@
 // Make sure to change the filename variable to the name of your image.
 // IMPORTANT: You need to have imagemagick installed on your system.
 // On Ubuntu you can install it with: sudo apt-get install imagemagick
-
 import imagemagick from "imagemagick";
 
 const root = `../public/assets/`;

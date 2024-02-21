@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Table } from "@sveltestrap/sveltestrap";
-  import { storage } from "../../stores/storage";
   import { link } from "svelte-spa-router";
+  import { storage } from "../../stores/storage";
 
   $: hasWarnings = Object.keys($storage.warnings).length > 0;
 </script>

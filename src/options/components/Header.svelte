@@ -1,11 +1,5 @@
 <script lang="ts">
-  import {
-    Navbar,
-    NavbarBrand,
-    NavItem,
-    Nav,
-  } from "@sveltestrap/sveltestrap";
-
+  import { Navbar, NavbarBrand, NavItem, Nav } from "@sveltestrap/sveltestrap";
   import { link } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
 </script>
@@ -22,7 +16,7 @@
       <a href="/insights/" class="nav-link" use:link use:active>Insights</a>
     </NavItem>
     <NavItem>
-        <a href="/about/" class="nav-link" use:link use:active>About</a>
-      </NavItem>
+      <a href="/about/" class="nav-link" use:link use:active>About</a>
+    </NavItem>
   </Nav>
 </Navbar>

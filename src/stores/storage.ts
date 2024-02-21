@@ -1,5 +1,5 @@
+import { get, writable } from "svelte/store";
 import browser from "webextension-polyfill";
-import { writable, get } from "svelte/store";
 
 type Storage = {
   warnings: Record<

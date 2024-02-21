@@ -1,4 +1,5 @@
 import browser from "webextension-polyfill";
+
 import { removePrefixWWW } from "../internal/strings";
 
 export const checkWhitelist = async (

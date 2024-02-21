@@ -1,4 +1,4 @@
-export const saveToFile = (data: any, filename: string, type: string) => {
+export const saveToFile = (data: BlobPart, filename: string, type: string) => {
   const file = new Blob([data], { type: type });
   const anchorElement = document.createElement("a");
   const url = URL.createObjectURL(file);
