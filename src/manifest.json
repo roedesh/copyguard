@@ -3,7 +3,7 @@
   "background": {
     "{{chrome}}.service_worker": "src/background/index.ts",
     "{{firefox}}.scripts": ["src/background/index.ts"],
-    "persistent": false
+    "{{firefox}}.persistent": false
   },
   "options_ui": {
     "page": "src/options/index.html",

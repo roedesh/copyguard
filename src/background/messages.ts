@@ -1,5 +1,4 @@
 import type { ContentScriptMessage } from "../internal/types";
-
 import { createNotification } from "./notifications";
 import { logWarningToStorage } from "./storage";
 
@@ -9,7 +8,6 @@ export const handleMessage = ({
   selection,
   hasHiddenElementsInSelection,
 }: ContentScriptMessage): void => {
-  console.log(clipboardData, hasHiddenElementsInSelection);
   if (hasHiddenElementsInSelection) {
     createNotification("There are hidden elements in your text selection!");
     logWarningToStorage(domain, "hiddenElements", selection);
