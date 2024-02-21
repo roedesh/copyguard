@@ -15,8 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Moved to Bun
 - Replaced React with Svelte
-- Simplified the check for clipboard changes
-  - Instead of comparing text, we now simply check if `clipboardData` is not empty. This only happens when the clipboard was altered by Javascript. In all other cases it is hidden by the browser as a security measure.
+- Greatly simplified the way clipboard data is checked for alterations
+  - Instead of comparing text, the extension now simply checks if `clipboardData` of the `ClipboardEvent` contains any data. This only happens when it was altered by Javascript. In all other cases this field is left empty by the browser as a security measure. 
 
 ## [1.3.0] - 2022-04-01
 
