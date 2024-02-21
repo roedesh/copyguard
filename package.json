@@ -10,7 +10,8 @@
     "start:firefox": "web-ext run --source-dir ./dist/",
     "icons": "cd build-tools && bun create-icons.ts",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint src/**/*.ts"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
@@ -20,6 +21,7 @@
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-svelte": "^2.35.1",
     "imagemagick": "^0.1.3",
     "prettier": "^3.2.5",
     "prettier-plugin-svelte": "^3.2.1",

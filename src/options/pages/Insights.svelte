@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { Button, Col, Container, Input, Row } from "@sveltestrap/sveltestrap";
+  import { Col, Container, Row } from "@sveltestrap/sveltestrap";
   import InsightsTable from "../components/InsightsTable.svelte";
-    import SaveForm from "../components/SaveForm.svelte";
+  import SaveForm from "../components/SaveForm.svelte";
 </script>
 
 <Container>

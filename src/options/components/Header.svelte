@@ -1,13 +1,9 @@
 <script lang="ts">
   import {
-    Collapse,
-    Container,
     Navbar,
     NavbarBrand,
-    NavbarToggler,
     NavItem,
     Nav,
-    NavLink,
   } from "@sveltestrap/sveltestrap";
 
   import { link } from "svelte-spa-router";
