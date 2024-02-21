@@ -13,15 +13,15 @@ jobs:
         run: bun run build
       - name: Run unit Test
         run: bun run test
-  automerge:
-    needs: test
-    runs-on: ubuntu-latest
+  # automerge:
+  #   needs: test
+  #   runs-on: ubuntu-latest
 
-    permissions:
-      pull-requests: write
-      contents: write
+  #   permissions:
+  #     pull-requests: write
+  #     contents: write
 
-    steps:
-      - uses: fastify/github-action-merge-dependabot@v3.0.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+  #   steps:
+  #     - uses: fastify/github-action-merge-dependabot@v3.0.0
+  #       with:
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
