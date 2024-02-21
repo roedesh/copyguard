@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom";
+import "@testing-library/dom";
 import "jest-location-mock";
 import "jest-webextension-mock";
 

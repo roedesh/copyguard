@@ -1,6 +1,13 @@
-.DS_STORE
-dist/js
+# OS
+.DS_Store
+
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+
+# Node
+node_modules/
+
+# Build
+dist/
 web-ext-artifacts/
-node_modules
-yarn-error.log
-keys.json

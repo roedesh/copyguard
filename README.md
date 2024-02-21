@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/roedesh/copyguard">
-    <img src="dist/icon128.png" alt="Logo" width="80" height="80">
+    <img src="public/assets/icon128.png" alt="Logo" width="80" height="80">
   </a>
 
 
@@ -25,7 +25,7 @@
 
 **[Read the blog post for more in-depth info](https://ruud.je/blog/always-double-check-what-you-copy-from-websites/)**
 
-This extension warns you whenever your copy action was hijacked. When you select text and copy it, this extension will compare your selection with the data that was added to your clipboard. If there is a difference, a native notification will be triggered.
+This extension warns you whenever your copy action was hijacked. When you select text and copy it, this extension will check if your clipboard data was altered by Javascript, or if your text selection contains hidden elements. If either one is the case, a native notification will be triggered.
 
 Available for the following browsers:
 
@@ -39,13 +39,14 @@ Available for the following browsers:
 - [x] Warns you when JavaScript alters your clipboard data after copying
 - [x] Warns you when the selection you copied contains hidden elements
 - [x] Whitelist websites
+- [x] Export list of website that altered your clipboard
 
 ## Building
 
 1.  Clone repo
-2.  `yarn`
-3.  `yarn dev` to run the dev task in watch mode
-4.  `yarn build` to build a production (minified) version
+2.  `bun run install`
+3.  `bun run dev` to run the dev task in watch mode
+4.  `bun run build` to build a production (minified) version
 
 ## Testing in Chrome
 
@@ -56,4 +57,4 @@ Available for the following browsers:
 ## Testing in Firefox
 
 1.  Complete the steps to build the project above
-2.  Run `yarn start:firefox` and a Firefox window will open with the extension installed.
+2.  Run `bun run start:firefox` and a Firefox window will open with the extension installed.

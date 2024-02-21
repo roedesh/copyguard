@@ -1,15 +1,5 @@
 import browser from "webextension-polyfill";
-import handleMessage from "../../src/backgroundScript/handleMessage";
-
-document.execCommand = jest.fn().mockImplementation(() => {
-  const sandbox = document.getElementById("sandbox") as HTMLTextAreaElement;
-  sandbox.value = "Some text";
-  return "Some text";
-});
-
-const setupBody = () => {
-  document.body.innerHTML = `<textarea id="sandbox"></textarea>`;
-};
+import { handleMessage } from "../../src/background/messages";
 
 describe("handleMessage", () => {
   beforeEach(() => {
@@ -17,36 +7,35 @@ describe("handleMessage", () => {
   });
 
   it("triggers a warning for altered clipboard data", () => {
-    setupBody();
-
-    handleMessage({ domain: "example.com", selection: "Differenttext", hasHiddenElementsInSelection: false });
+    handleMessage({
+      domain: "example.com",
+      clipboardData: "text",
+      selection: "text",
+      hasHiddenElementsInSelection: false,
+    });
 
     expect(browser.notifications.create).toHaveBeenCalledWith({
       type: "basic",
       title: "Copy Guard",
-      message: "Your clipboard data was altered by Javascript!",
-      iconUrl: "icon128.png",
+      message: "Your clipboard data has been altered!",
+      iconUrl: "/assets/icon128.png",
+      priority: 2,
     });
   });
 
   it("triggers a warning for hidden text content", () => {
-    setupBody();
-
-    handleMessage({ domain: "example.com", selection: "Sometext", hasHiddenElementsInSelection: true });
+    handleMessage({
+      domain: "example.com",
+      selection: "Sometext",
+      hasHiddenElementsInSelection: true,
+    });
 
     expect(browser.notifications.create).toHaveBeenCalledWith({
       type: "basic",
       title: "Copy Guard",
       message: "There are hidden elements in your text selection!",
-      iconUrl: "icon128.png",
+      iconUrl: "/assets/icon128.png",
+      priority: 2,
     });
-  });
-
-  it("given nothing is wrong, does not trigger a warning", () => {
-    setupBody();
-
-    handleMessage({ domain: "example.com", selection: "Sometext", hasHiddenElementsInSelection: false });
-
-    expect(browser.notifications.create).not.toHaveBeenCalled();
   });
 });

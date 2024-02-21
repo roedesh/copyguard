@@ -6,20 +6,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: oven-sh/setup-bun@v1
       - name: Install dependencies
-        run: yarn install
+        run: bun install
       - name: Build
-        run: yarn build
+        run: bun run build
       - name: Run unit Test
-        run: yarn test
+        run: bun run test
   automerge:
     needs: test
     runs-on: ubuntu-latest
-
+    if: github.actor == 'dependabot[bot]'
     permissions:
       pull-requests: write
       contents: write
-
     steps:
       - uses: fastify/github-action-merge-dependabot@v3.0.0
         with:
