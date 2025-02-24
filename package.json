@@ -23,7 +23,7 @@
     "@tsconfig/svelte": "^5.0.0",
     "@types/imagemagick": "^0.0.35",
     "@types/jest": "^29.5.12",
-    "@types/webextension-polyfill": "^0.10.0",
+    "@types/webextension-polyfill": "^0.12.2",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "eslint": "^9.8.0",
